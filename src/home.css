@@ -1,0 +1,125 @@
+.header {
+    background: linear-gradient(135deg, #007bff, #7f0015);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #003f7f;
+  }
+  
+  .header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .header nav a:hover {
+    color: #ffcc00;
+  }
+  
+  .main-content {
+    padding: 40px;
+    background-color: #f9fbfd;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .search-input, .branch-select {
+    padding: 12px;
+    border: 2px solid #7f0015;
+    border-radius: 10px;
+    width: 48%;
+    background-color: #fff;
+    transition: border-color 0.3s;
+  }
+  
+  .search-input:focus, .branch-select:focus {
+    border-color: #7f0015;
+    outline: none;
+  }
+  
+  .faculty-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .faculty-card {
+    background-color: #fff;
+    border-radius: 1px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .faculty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faculty-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    border: 5px solid #7f0015;
+  }
+  
+  .faculty-card h3 {
+    color: #7f0015;
+  }
+  
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+  }
+  
+  .pagination button {
+    background-color: #7f0015;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination button:hover {
+    background-color: #0056b3;
+  }
+  
+  .pagination button.active {
+    background-color: #ffcc00;
+    color: #003f7f;
+    font-weight: bold;
+  }
+  
+  .footer {
+    background-color: #7f0015;
+    color: white;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .footer a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
