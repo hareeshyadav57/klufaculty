@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const fetchFaculties = async () => {
       try {
-        const response = await fetch('http://localhost:5000/faculties');
+        const response = await fetch('https://klfaculty-backend.onrender.com/faculties');
         const data = await response.json();
         setFaculties(data);
       } catch (error) {
