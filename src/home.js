@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import facultyData from './faculty.json';
 import './home.css';
 
 function Home() {
@@ -11,14 +10,24 @@ function Home() {
   const facultiesPerPage = 16;
 
   useEffect(() => {
-    setFaculties(facultyData);
+    const fetchFaculties = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/faculties');
+        const data = await response.json();
+        setFaculties(data);
+      } catch (error) {
+        console.error('Error fetching faculty data:', error);
+      }
+    };
+
+    fetchFaculties();
   }, []);
 
-  const departments = ['All', ...new Set(facultyData.map(faculty => faculty.department))];
+  const departments = ['All', ...new Set(faculties.map(faculty => faculty.department))];
 
-  const filteredFaculties = faculties.filter(faculty => 
+  const filteredFaculties = faculties.filter(faculty =>
     (faculty.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    faculty.specialization.toLowerCase().includes(searchTerm.toLowerCase())) &&
+      faculty.specialization.toLowerCase().includes(searchTerm.toLowerCase())) &&
     (selectedDepartment === 'All' || selectedDepartment === '' || faculty.department === selectedDepartment)
   );
 
@@ -63,16 +72,16 @@ function Home() {
         <h2>Faculty Details</h2>
 
         <div className="search-container">
-          <input 
-            type="text" 
-            placeholder="Search by name or specialization..." 
-            value={searchTerm} 
+          <input
+            type="text"
+            placeholder="Search by name or specialization..."
+            value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
           />
 
-          <select 
-            value={selectedDepartment} 
+          <select
+            value={selectedDepartment}
             onChange={(e) => setSelectedDepartment(e.target.value)}
             className="branch-select"
           >
